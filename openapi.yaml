@@ -3012,8 +3012,7 @@ paths:
         - $ref: '#/components/parameters/limit'
         - $ref: '#/components/parameters/passThrough'
         - $ref: '#/components/parameters/fields'
-      security:
-        - apiKey: []
+      
       responses:
         '200':
           $ref: '#/components/responses/GetJobsResponse'
@@ -3063,8 +3062,7 @@ paths:
         - $ref: '#/components/parameters/serviceId'
         - $ref: '#/components/parameters/raw'
         - $ref: '#/components/parameters/fields'
-      security:
-        - apiKey: []
+      
       responses:
         '200':
           $ref: '#/components/responses/GetJobResponse'
@@ -3119,8 +3117,7 @@ paths:
         - $ref: '#/components/parameters/applicantsFilter'
         - $ref: '#/components/parameters/passThrough'
         - $ref: '#/components/parameters/fields'
-      security:
-        - apiKey: []
+      
       responses:
         '200':
           $ref: '#/components/responses/GetApplicantsResponse'
@@ -3167,8 +3164,7 @@ paths:
         - $ref: '#/components/parameters/consumerId'
         - $ref: '#/components/parameters/applicationId'
         - $ref: '#/components/parameters/serviceId'
-      security:
-        - apiKey: []
+      
       requestBody:
         required: true
         content:
@@ -3325,8 +3321,7 @@ paths:
         - $ref: '#/components/parameters/serviceId'
         - $ref: '#/components/parameters/raw'
         - $ref: '#/components/parameters/fields'
-      security:
-        - apiKey: []
+      
       responses:
         '200':
           $ref: '#/components/responses/GetApplicantResponse'
@@ -3376,8 +3371,7 @@ paths:
         - $ref: '#/components/parameters/applicationId'
         - $ref: '#/components/parameters/serviceId'
         - $ref: '#/components/parameters/raw'
-      security:
-        - apiKey: []
+      
       requestBody:
         required: true
         content:
@@ -3533,8 +3527,7 @@ paths:
         - $ref: '#/components/parameters/applicationId'
         - $ref: '#/components/parameters/serviceId'
         - $ref: '#/components/parameters/raw'
-      security:
-        - apiKey: []
+      
       responses:
         '200':
           $ref: '#/components/responses/DeleteApplicantResponse'
@@ -3587,8 +3580,7 @@ paths:
         - $ref: '#/components/parameters/cursor'
         - $ref: '#/components/parameters/passThrough'
         - $ref: '#/components/parameters/limit'
-      security:
-        - apiKey: []
+      
       responses:
         '200':
           $ref: '#/components/responses/GetApplicationsResponse'
@@ -3635,8 +3627,7 @@ paths:
         - $ref: '#/components/parameters/consumerId'
         - $ref: '#/components/parameters/applicationId'
         - $ref: '#/components/parameters/serviceId'
-      security:
-        - apiKey: []
+      
       requestBody:
         required: true
         content:
@@ -3703,8 +3694,7 @@ paths:
         - $ref: '#/components/parameters/applicationId'
         - $ref: '#/components/parameters/serviceId'
         - $ref: '#/components/parameters/raw'
-      security:
-        - apiKey: []
+      
       responses:
         '200':
           $ref: '#/components/responses/GetApplicationResponse'
@@ -3754,8 +3744,7 @@ paths:
         - $ref: '#/components/parameters/applicationId'
         - $ref: '#/components/parameters/serviceId'
         - $ref: '#/components/parameters/raw'
-      security:
-        - apiKey: []
+      
       requestBody:
         required: true
         content:
@@ -3822,8 +3811,7 @@ paths:
         - $ref: '#/components/parameters/applicationId'
         - $ref: '#/components/parameters/serviceId'
         - $ref: '#/components/parameters/raw'
-      security:
-        - apiKey: []
+      
       responses:
         '200':
           $ref: '#/components/responses/DeleteApplicationResponse'
