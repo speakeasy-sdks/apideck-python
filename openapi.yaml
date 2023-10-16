@@ -31,6 +31,16 @@ x-speakeasy-name-override:
     methodNameOverride: One
   - operationId: .*Delete$
     methodNameOverride: Delete
+x-speakeasy-globals:
+  parameters:
+    - name: x-apideck-app-id
+      in: header
+      schema:
+        $ref: '#/components/parameters/applicationId'
+    - name: x-apideck-consumer-id
+      in: header
+      schema:
+        $ref: '#/components/parameters/consumerId'
 components:
   parameters:
     applicantsFilter:
@@ -2936,6 +2946,7 @@ components:
       type: apiKey
       in: header
       name: Authorization
+      x-speakeasy-example: "Bearer <your-apideck-api-key>"
       description: |
         To use API you have to sign up and get your own API key. Unify API accounts have sandbox mode and live mode API keys. 
         To change modes just use the appropriate key to get a live or test object. You can find your API keys on the unify settings of your Apideck app.
