@@ -1,0 +1,15 @@
+# GetApplicantsResponse
+
+
+## Fields
+
+| Field                                                       | Type                                                        | Required                                                    | Description                                                 | Example                                                     |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `data`                                                      | list[[Applicant](../../models/shared/applicant.md)]         | :heavy_check_mark:                                          | N/A                                                         |                                                             |
+| `links`                                                     | [Optional[Links]](../../models/shared/links.md)             | :heavy_minus_sign:                                          | Links to navigate to previous or next pages through the API |                                                             |
+| `meta`                                                      | [Optional[Meta]](../../models/shared/meta.md)               | :heavy_minus_sign:                                          | Response metadata                                           |                                                             |
+| `operation`                                                 | *str*                                                       | :heavy_check_mark:                                          | Operation performed                                         | all                                                         |
+| `resource`                                                  | *str*                                                       | :heavy_check_mark:                                          | Unified API resource name                                   | Applicants                                                  |
+| `service`                                                   | *str*                                                       | :heavy_check_mark:                                          | Apideck ID of service provider                              | lever                                                       |
+| `status`                                                    | *str*                                                       | :heavy_check_mark:                                          | HTTP Response Status                                        | OK                                                          |
+| `status_code`                                               | *int*                                                       | :heavy_check_mark:                                          | HTTP Response Status Code                                   | 200                                                         |

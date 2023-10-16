@@ -1,0 +1,11 @@
+# ApplicationInput
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             | Example                                                                 |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `applicant_id`                                                          | *Optional[str]*                                                         | :heavy_check_mark:                                                      | N/A                                                                     | 12345                                                                   |
+| `job_id`                                                                | *Optional[str]*                                                         | :heavy_check_mark:                                                      | N/A                                                                     | 12345                                                                   |
+| `stage`                                                                 | [Optional[ApplicationStage]](../../models/shared/applicationstage.md)   | :heavy_minus_sign:                                                      | N/A                                                                     |                                                                         |
+| `status`                                                                | [Optional[ApplicationStatus]](../../models/shared/applicationstatus.md) | :heavy_minus_sign:                                                      | N/A                                                                     | open                                                                    |

@@ -1,0 +1,10 @@
+# ApplicantWebsites
+
+
+## Fields
+
+| Field                                                                           | Type                                                                            | Required                                                                        | Description                                                                     | Example                                                                         |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `id`                                                                            | *Optional[str]*                                                                 | :heavy_minus_sign:                                                              | Unique identifier for the website                                               | 12345                                                                           |
+| `type`                                                                          | [Optional[ApplicantWebsitesType]](../../models/shared/applicantwebsitestype.md) | :heavy_minus_sign:                                                              | The type of website                                                             | primary                                                                         |
+| `url`                                                                           | *str*                                                                           | :heavy_check_mark:                                                              | The website URL                                                                 | http://example.com                                                              |
