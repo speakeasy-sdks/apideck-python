@@ -16,11 +16,11 @@ Create Applicant
 ### Example Usage
 
 ```python
-import ats_api
+import apideck
 import dateutil.parser
-from ats_api.models import operations, shared
+from apideck.models import operations, shared
 
-s = ats_api.AtsAPI()
+s = apideck.Apideck()
 
 req = operations.ApplicantsAddRequest(
     applicant_input=shared.ApplicantInput(
@@ -134,7 +134,7 @@ req = operations.ApplicantsAddRequest(
     x_apideck_consumer_id='Home indigo',
 )
 
-res = s.ats.applicants.add(req, "")
+res = s.ats.applicants.add(req, "Bearer <your-apideck-api-key>")
 
 if res.create_applicant_response is not None:
     # handle response
@@ -161,10 +161,10 @@ List Applicants
 ### Example Usage
 
 ```python
-import ats_api
-from ats_api.models import operations, shared
+import apideck
+from apideck.models import operations, shared
 
-s = ats_api.AtsAPI()
+s = apideck.Apideck()
 
 req = operations.ApplicantsAllRequest(
     filter=shared.ApplicantsFilter(
@@ -177,7 +177,7 @@ req = operations.ApplicantsAllRequest(
     x_apideck_consumer_id='Gasoline error',
 )
 
-res = s.ats.applicants.all(req, "")
+res = s.ats.applicants.all(req, "Bearer <your-apideck-api-key>")
 
 if res.get_applicants_response is not None:
     # handle response
@@ -204,10 +204,10 @@ Delete Applicant
 ### Example Usage
 
 ```python
-import ats_api
-from ats_api.models import operations
+import apideck
+from apideck.models import operations
 
-s = ats_api.AtsAPI()
+s = apideck.Apideck()
 
 req = operations.ApplicantsDeleteRequest(
     id='<ID>',
@@ -215,7 +215,7 @@ req = operations.ApplicantsDeleteRequest(
     x_apideck_consumer_id='qua',
 )
 
-res = s.ats.applicants.delete(req, "")
+res = s.ats.applicants.delete(req, "Bearer <your-apideck-api-key>")
 
 if res.delete_applicant_response is not None:
     # handle response
@@ -242,10 +242,10 @@ Get Applicant
 ### Example Usage
 
 ```python
-import ats_api
-from ats_api.models import operations
+import apideck
+from apideck.models import operations
 
-s = ats_api.AtsAPI()
+s = apideck.Apideck()
 
 req = operations.ApplicantsOneRequest(
     id='<ID>',
@@ -253,7 +253,7 @@ req = operations.ApplicantsOneRequest(
     x_apideck_consumer_id='bypass meter',
 )
 
-res = s.ats.applicants.one(req, "")
+res = s.ats.applicants.one(req, "Bearer <your-apideck-api-key>")
 
 if res.get_applicant_response is not None:
     # handle response
@@ -280,11 +280,11 @@ Update Applicant
 ### Example Usage
 
 ```python
-import ats_api
+import apideck
 import dateutil.parser
-from ats_api.models import operations, shared
+from apideck.models import operations, shared
 
-s = ats_api.AtsAPI()
+s = apideck.Apideck()
 
 req = operations.ApplicantsUpdateRequest(
     applicant_input=shared.ApplicantInput(
@@ -399,7 +399,7 @@ req = operations.ApplicantsUpdateRequest(
     x_apideck_consumer_id='Tempe Ruble ADP',
 )
 
-res = s.ats.applicants.update(req, "")
+res = s.ats.applicants.update(req, "Bearer <your-apideck-api-key>")
 
 if res.update_applicant_response is not None:
     # handle response

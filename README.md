@@ -7,7 +7,7 @@
 </div>
 
 <!-- Start SDK Installation -->
-# SDK Installation
+## SDK Installation
 
 ```bash
 pip install git+https://github.com/speakeasy-sdks/apideck-python.git
@@ -16,14 +16,12 @@ pip install git+https://github.com/speakeasy-sdks/apideck-python.git
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```python
-import ats_api
+import apideck
 import dateutil.parser
-from ats_api.models import operations, shared
+from apideck.models import operations, shared
 
-s = ats_api.AtsAPI()
+s = apideck.Apideck()
 
 req = operations.ApplicantsAddRequest(
     applicant_input=shared.ApplicantInput(
@@ -137,7 +135,7 @@ req = operations.ApplicantsAddRequest(
     x_apideck_consumer_id='Home indigo',
 )
 
-res = s.ats.applicants.add(req, "")
+res = s.ats.applicants.add(req, "Bearer <your-apideck-api-key>")
 
 if res.create_applicant_response is not None:
     # handle response
@@ -146,11 +144,11 @@ if res.create_applicant_response is not None:
 <!-- End SDK Example Usage -->
 
 <!-- Start SDK Available Operations -->
-# Available Resources and Operations
+## Available Resources and Operations
 
 
 
-## [ats.applicants](docs/sdks/atsapplicants/README.md)
+### [ats.applicants](docs/sdks/atsapplicants/README.md)
 
 * [add](docs/sdks/atsapplicants/README.md#add) - Create Applicant
 * [all](docs/sdks/atsapplicants/README.md#all) - List Applicants
@@ -158,7 +156,7 @@ if res.create_applicant_response is not None:
 * [one](docs/sdks/atsapplicants/README.md#one) - Get Applicant
 * [update](docs/sdks/atsapplicants/README.md#update) - Update Applicant
 
-## [ats.applications](docs/sdks/atsapplications/README.md)
+### [ats.applications](docs/sdks/atsapplications/README.md)
 
 * [add](docs/sdks/atsapplications/README.md#add) - Create Application
 * [all](docs/sdks/atsapplications/README.md#all) - List Applications
@@ -166,15 +164,13 @@ if res.create_applicant_response is not None:
 * [one](docs/sdks/atsapplications/README.md#one) - Get Application
 * [update](docs/sdks/atsapplications/README.md#update) - Update Application
 
-## [ats.jobs](docs/sdks/atsjobs/README.md)
+### [ats.jobs](docs/sdks/atsjobs/README.md)
 
 * [all](docs/sdks/atsjobs/README.md#all) - List Jobs
 * [one](docs/sdks/atsjobs/README.md#one) - Get Job
 <!-- End SDK Available Operations -->
 
 <!-- Start Dev Containers -->
-
-
 
 <!-- End Dev Containers -->
 

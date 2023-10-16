@@ -2,11 +2,11 @@
 
 
 ```python
-import ats_api
+import apideck
 import dateutil.parser
-from ats_api.models import operations, shared
+from apideck.models import operations, shared
 
-s = ats_api.AtsAPI()
+s = apideck.Apideck()
 
 req = operations.ApplicantsAddRequest(
     applicant_input=shared.ApplicantInput(
@@ -120,7 +120,7 @@ req = operations.ApplicantsAddRequest(
     x_apideck_consumer_id='Home indigo',
 )
 
-res = s.ats.applicants.add(req, "")
+res = s.ats.applicants.add(req, "Bearer <your-apideck-api-key>")
 
 if res.create_applicant_response is not None:
     # handle response

@@ -16,10 +16,10 @@ Create Application
 ### Example Usage
 
 ```python
-import ats_api
-from ats_api.models import operations, shared
+import apideck
+from apideck.models import operations, shared
 
-s = ats_api.AtsAPI()
+s = apideck.Apideck()
 
 req = operations.ApplicationsAddRequest(
     application_input=shared.ApplicationInput(
@@ -35,7 +35,7 @@ req = operations.ApplicationsAddRequest(
     x_apideck_consumer_id='Officer impactful',
 )
 
-res = s.ats.applications.add(req, "")
+res = s.ats.applications.add(req, "Bearer <your-apideck-api-key>")
 
 if res.create_application_response is not None:
     # handle response
@@ -62,10 +62,10 @@ List Applications
 ### Example Usage
 
 ```python
-import ats_api
-from ats_api.models import operations
+import apideck
+from apideck.models import operations
 
-s = ats_api.AtsAPI()
+s = apideck.Apideck()
 
 req = operations.ApplicationsAllRequest(
     pass_through={
@@ -75,7 +75,7 @@ req = operations.ApplicationsAllRequest(
     x_apideck_consumer_id='Gasoline error',
 )
 
-res = s.ats.applications.all(req, "")
+res = s.ats.applications.all(req, "Bearer <your-apideck-api-key>")
 
 if res.get_applications_response is not None:
     # handle response
@@ -102,10 +102,10 @@ Delete Application
 ### Example Usage
 
 ```python
-import ats_api
-from ats_api.models import operations
+import apideck
+from apideck.models import operations
 
-s = ats_api.AtsAPI()
+s = apideck.Apideck()
 
 req = operations.ApplicationsDeleteRequest(
     id='<ID>',
@@ -113,7 +113,7 @@ req = operations.ApplicationsDeleteRequest(
     x_apideck_consumer_id='qua',
 )
 
-res = s.ats.applications.delete(req, "")
+res = s.ats.applications.delete(req, "Bearer <your-apideck-api-key>")
 
 if res.delete_application_response is not None:
     # handle response
@@ -140,10 +140,10 @@ Get Application
 ### Example Usage
 
 ```python
-import ats_api
-from ats_api.models import operations
+import apideck
+from apideck.models import operations
 
-s = ats_api.AtsAPI()
+s = apideck.Apideck()
 
 req = operations.ApplicationsOneRequest(
     id='<ID>',
@@ -151,7 +151,7 @@ req = operations.ApplicationsOneRequest(
     x_apideck_consumer_id='bypass meter',
 )
 
-res = s.ats.applications.one(req, "")
+res = s.ats.applications.one(req, "Bearer <your-apideck-api-key>")
 
 if res.get_application_response is not None:
     # handle response
@@ -178,10 +178,10 @@ Update Application
 ### Example Usage
 
 ```python
-import ats_api
-from ats_api.models import operations, shared
+import apideck
+from apideck.models import operations, shared
 
-s = ats_api.AtsAPI()
+s = apideck.Apideck()
 
 req = operations.ApplicationsUpdateRequest(
     application_input=shared.ApplicationInput(
@@ -198,7 +198,7 @@ req = operations.ApplicationsUpdateRequest(
     x_apideck_consumer_id='Tempe Ruble ADP',
 )
 
-res = s.ats.applications.update(req, "")
+res = s.ats.applications.update(req, "Bearer <your-apideck-api-key>")
 
 if res.update_application_response is not None:
     # handle response

@@ -13,10 +13,10 @@ List Jobs
 ### Example Usage
 
 ```python
-import ats_api
-from ats_api.models import operations
+import apideck
+from apideck.models import operations
 
-s = ats_api.AtsAPI()
+s = apideck.Apideck()
 
 req = operations.JobsAllRequest(
     pass_through={
@@ -26,7 +26,7 @@ req = operations.JobsAllRequest(
     x_apideck_consumer_id='Gasoline error',
 )
 
-res = s.ats.jobs.all(req, "")
+res = s.ats.jobs.all(req, "Bearer <your-apideck-api-key>")
 
 if res.get_jobs_response is not None:
     # handle response
@@ -53,10 +53,10 @@ Get Job
 ### Example Usage
 
 ```python
-import ats_api
-from ats_api.models import operations
+import apideck
+from apideck.models import operations
 
-s = ats_api.AtsAPI()
+s = apideck.Apideck()
 
 req = operations.JobsOneRequest(
     id='<ID>',
@@ -64,7 +64,7 @@ req = operations.JobsOneRequest(
     x_apideck_consumer_id='bypass meter',
 )
 
-res = s.ats.jobs.one(req, "")
+res = s.ats.jobs.one(req, "Bearer <your-apideck-api-key>")
 
 if res.get_job_response is not None:
     # handle response
