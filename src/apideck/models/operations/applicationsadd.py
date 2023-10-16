@@ -11,14 +11,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class ApplicationsAddSecurity:
-    api_key: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'Authorization' }})
-    
-
-
-
-
-@dataclasses.dataclass
 class ApplicationsAddRequest:
     application_input: shared_application.ApplicationInput = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     x_apideck_app_id: str = dataclasses.field(metadata={'header': { 'field_name': 'x-apideck-app-id', 'style': 'simple', 'explode': False }})

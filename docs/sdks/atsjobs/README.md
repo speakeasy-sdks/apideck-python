@@ -14,9 +14,11 @@ List Jobs
 
 ```python
 import apideck
-from apideck.models import operations
+from apideck.models import operations, shared
 
-s = apideck.Apideck()
+s = apideck.Apideck(
+    api_key="Bearer <your-apideck-api-key>",
+)
 
 req = operations.JobsAllRequest(
     pass_through={
@@ -26,7 +28,7 @@ req = operations.JobsAllRequest(
     x_apideck_consumer_id='Gasoline error',
 )
 
-res = s.ats.jobs.all(req, "Bearer <your-apideck-api-key>")
+res = s.ats.jobs.all(req)
 
 if res.get_jobs_response is not None:
     # handle response
@@ -35,10 +37,9 @@ if res.get_jobs_response is not None:
 
 ### Parameters
 
-| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| `request`                                                                | [operations.JobsAllRequest](../../models/operations/jobsallrequest.md)   | :heavy_check_mark:                                                       | The request object to use for the request.                               |
-| `security`                                                               | [operations.JobsAllSecurity](../../models/operations/jobsallsecurity.md) | :heavy_check_mark:                                                       | The security requirements to use for the request.                        |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `request`                                                              | [operations.JobsAllRequest](../../models/operations/jobsallrequest.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
 
 
 ### Response
@@ -54,9 +55,11 @@ Get Job
 
 ```python
 import apideck
-from apideck.models import operations
+from apideck.models import operations, shared
 
-s = apideck.Apideck()
+s = apideck.Apideck(
+    api_key="Bearer <your-apideck-api-key>",
+)
 
 req = operations.JobsOneRequest(
     id='<ID>',
@@ -64,7 +67,7 @@ req = operations.JobsOneRequest(
     x_apideck_consumer_id='bypass meter',
 )
 
-res = s.ats.jobs.one(req, "Bearer <your-apideck-api-key>")
+res = s.ats.jobs.one(req)
 
 if res.get_job_response is not None:
     # handle response
@@ -73,10 +76,9 @@ if res.get_job_response is not None:
 
 ### Parameters
 
-| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| `request`                                                                | [operations.JobsOneRequest](../../models/operations/jobsonerequest.md)   | :heavy_check_mark:                                                       | The request object to use for the request.                               |
-| `security`                                                               | [operations.JobsOneSecurity](../../models/operations/jobsonesecurity.md) | :heavy_check_mark:                                                       | The security requirements to use for the request.                        |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `request`                                                              | [operations.JobsOneRequest](../../models/operations/jobsonerequest.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
 
 
 ### Response

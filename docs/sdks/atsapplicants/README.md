@@ -20,7 +20,9 @@ import apideck
 import dateutil.parser
 from apideck.models import operations, shared
 
-s = apideck.Apideck()
+s = apideck.Apideck(
+    api_key="Bearer <your-apideck-api-key>",
+)
 
 req = operations.ApplicantsAddRequest(
     applicant_input=shared.ApplicantInput(
@@ -134,7 +136,7 @@ req = operations.ApplicantsAddRequest(
     x_apideck_consumer_id='Home indigo',
 )
 
-res = s.ats.applicants.add(req, "Bearer <your-apideck-api-key>")
+res = s.ats.applicants.add(req)
 
 if res.create_applicant_response is not None:
     # handle response
@@ -143,10 +145,9 @@ if res.create_applicant_response is not None:
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.ApplicantsAddRequest](../../models/operations/applicantsaddrequest.md)   | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `security`                                                                           | [operations.ApplicantsAddSecurity](../../models/operations/applicantsaddsecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.ApplicantsAddRequest](../../models/operations/applicantsaddrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response
@@ -164,7 +165,9 @@ List Applicants
 import apideck
 from apideck.models import operations, shared
 
-s = apideck.Apideck()
+s = apideck.Apideck(
+    api_key="Bearer <your-apideck-api-key>",
+)
 
 req = operations.ApplicantsAllRequest(
     filter=shared.ApplicantsFilter(
@@ -177,7 +180,7 @@ req = operations.ApplicantsAllRequest(
     x_apideck_consumer_id='Gasoline error',
 )
 
-res = s.ats.applicants.all(req, "Bearer <your-apideck-api-key>")
+res = s.ats.applicants.all(req)
 
 if res.get_applicants_response is not None:
     # handle response
@@ -186,10 +189,9 @@ if res.get_applicants_response is not None:
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.ApplicantsAllRequest](../../models/operations/applicantsallrequest.md)   | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `security`                                                                           | [operations.ApplicantsAllSecurity](../../models/operations/applicantsallsecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.ApplicantsAllRequest](../../models/operations/applicantsallrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response
@@ -205,9 +207,11 @@ Delete Applicant
 
 ```python
 import apideck
-from apideck.models import operations
+from apideck.models import operations, shared
 
-s = apideck.Apideck()
+s = apideck.Apideck(
+    api_key="Bearer <your-apideck-api-key>",
+)
 
 req = operations.ApplicantsDeleteRequest(
     id='<ID>',
@@ -215,7 +219,7 @@ req = operations.ApplicantsDeleteRequest(
     x_apideck_consumer_id='qua',
 )
 
-res = s.ats.applicants.delete(req, "Bearer <your-apideck-api-key>")
+res = s.ats.applicants.delete(req)
 
 if res.delete_applicant_response is not None:
     # handle response
@@ -224,10 +228,9 @@ if res.delete_applicant_response is not None:
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [operations.ApplicantsDeleteRequest](../../models/operations/applicantsdeleterequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `security`                                                                                 | [operations.ApplicantsDeleteSecurity](../../models/operations/applicantsdeletesecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.ApplicantsDeleteRequest](../../models/operations/applicantsdeleterequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response
@@ -243,9 +246,11 @@ Get Applicant
 
 ```python
 import apideck
-from apideck.models import operations
+from apideck.models import operations, shared
 
-s = apideck.Apideck()
+s = apideck.Apideck(
+    api_key="Bearer <your-apideck-api-key>",
+)
 
 req = operations.ApplicantsOneRequest(
     id='<ID>',
@@ -253,7 +258,7 @@ req = operations.ApplicantsOneRequest(
     x_apideck_consumer_id='bypass meter',
 )
 
-res = s.ats.applicants.one(req, "Bearer <your-apideck-api-key>")
+res = s.ats.applicants.one(req)
 
 if res.get_applicant_response is not None:
     # handle response
@@ -262,10 +267,9 @@ if res.get_applicant_response is not None:
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.ApplicantsOneRequest](../../models/operations/applicantsonerequest.md)   | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `security`                                                                           | [operations.ApplicantsOneSecurity](../../models/operations/applicantsonesecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.ApplicantsOneRequest](../../models/operations/applicantsonerequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response
@@ -284,7 +288,9 @@ import apideck
 import dateutil.parser
 from apideck.models import operations, shared
 
-s = apideck.Apideck()
+s = apideck.Apideck(
+    api_key="Bearer <your-apideck-api-key>",
+)
 
 req = operations.ApplicantsUpdateRequest(
     applicant_input=shared.ApplicantInput(
@@ -399,7 +405,7 @@ req = operations.ApplicantsUpdateRequest(
     x_apideck_consumer_id='Tempe Ruble ADP',
 )
 
-res = s.ats.applicants.update(req, "Bearer <your-apideck-api-key>")
+res = s.ats.applicants.update(req)
 
 if res.update_applicant_response is not None:
     # handle response
@@ -408,10 +414,9 @@ if res.update_applicant_response is not None:
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [operations.ApplicantsUpdateRequest](../../models/operations/applicantsupdaterequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `security`                                                                                 | [operations.ApplicantsUpdateSecurity](../../models/operations/applicantsupdatesecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.ApplicantsUpdateRequest](../../models/operations/applicantsupdaterequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response

@@ -12,7 +12,7 @@ class AtsJobs:
         self.sdk_configuration = sdk_config
         
     
-    def all(self, request: operations.JobsAllRequest, security: operations.JobsAllSecurity) -> operations.JobsAllResponse:
+    def all(self, request: operations.JobsAllRequest) -> operations.JobsAllResponse:
         r"""List Jobs
         List Jobs
         """
@@ -24,7 +24,7 @@ class AtsJobs:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -84,7 +84,7 @@ class AtsJobs:
         return res
 
     
-    def one(self, request: operations.JobsOneRequest, security: operations.JobsOneSecurity) -> operations.JobsOneResponse:
+    def one(self, request: operations.JobsOneRequest) -> operations.JobsOneResponse:
         r"""Get Job
         Get Job
         """
@@ -96,7 +96,7 @@ class AtsJobs:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')

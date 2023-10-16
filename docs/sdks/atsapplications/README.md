@@ -19,7 +19,9 @@ Create Application
 import apideck
 from apideck.models import operations, shared
 
-s = apideck.Apideck()
+s = apideck.Apideck(
+    api_key="Bearer <your-apideck-api-key>",
+)
 
 req = operations.ApplicationsAddRequest(
     application_input=shared.ApplicationInput(
@@ -35,7 +37,7 @@ req = operations.ApplicationsAddRequest(
     x_apideck_consumer_id='Officer impactful',
 )
 
-res = s.ats.applications.add(req, "Bearer <your-apideck-api-key>")
+res = s.ats.applications.add(req)
 
 if res.create_application_response is not None:
     # handle response
@@ -44,10 +46,9 @@ if res.create_application_response is not None:
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.ApplicationsAddRequest](../../models/operations/applicationsaddrequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `security`                                                                               | [operations.ApplicationsAddSecurity](../../models/operations/applicationsaddsecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.ApplicationsAddRequest](../../models/operations/applicationsaddrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
 
 
 ### Response
@@ -63,9 +64,11 @@ List Applications
 
 ```python
 import apideck
-from apideck.models import operations
+from apideck.models import operations, shared
 
-s = apideck.Apideck()
+s = apideck.Apideck(
+    api_key="Bearer <your-apideck-api-key>",
+)
 
 req = operations.ApplicationsAllRequest(
     pass_through={
@@ -75,7 +78,7 @@ req = operations.ApplicationsAllRequest(
     x_apideck_consumer_id='Gasoline error',
 )
 
-res = s.ats.applications.all(req, "Bearer <your-apideck-api-key>")
+res = s.ats.applications.all(req)
 
 if res.get_applications_response is not None:
     # handle response
@@ -84,10 +87,9 @@ if res.get_applications_response is not None:
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.ApplicationsAllRequest](../../models/operations/applicationsallrequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `security`                                                                               | [operations.ApplicationsAllSecurity](../../models/operations/applicationsallsecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.ApplicationsAllRequest](../../models/operations/applicationsallrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
 
 
 ### Response
@@ -103,9 +105,11 @@ Delete Application
 
 ```python
 import apideck
-from apideck.models import operations
+from apideck.models import operations, shared
 
-s = apideck.Apideck()
+s = apideck.Apideck(
+    api_key="Bearer <your-apideck-api-key>",
+)
 
 req = operations.ApplicationsDeleteRequest(
     id='<ID>',
@@ -113,7 +117,7 @@ req = operations.ApplicationsDeleteRequest(
     x_apideck_consumer_id='qua',
 )
 
-res = s.ats.applications.delete(req, "Bearer <your-apideck-api-key>")
+res = s.ats.applications.delete(req)
 
 if res.delete_application_response is not None:
     # handle response
@@ -122,10 +126,9 @@ if res.delete_application_response is not None:
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.ApplicationsDeleteRequest](../../models/operations/applicationsdeleterequest.md)   | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `security`                                                                                     | [operations.ApplicationsDeleteSecurity](../../models/operations/applicationsdeletesecurity.md) | :heavy_check_mark:                                                                             | The security requirements to use for the request.                                              |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.ApplicationsDeleteRequest](../../models/operations/applicationsdeleterequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
 
 
 ### Response
@@ -141,9 +144,11 @@ Get Application
 
 ```python
 import apideck
-from apideck.models import operations
+from apideck.models import operations, shared
 
-s = apideck.Apideck()
+s = apideck.Apideck(
+    api_key="Bearer <your-apideck-api-key>",
+)
 
 req = operations.ApplicationsOneRequest(
     id='<ID>',
@@ -151,7 +156,7 @@ req = operations.ApplicationsOneRequest(
     x_apideck_consumer_id='bypass meter',
 )
 
-res = s.ats.applications.one(req, "Bearer <your-apideck-api-key>")
+res = s.ats.applications.one(req)
 
 if res.get_application_response is not None:
     # handle response
@@ -160,10 +165,9 @@ if res.get_application_response is not None:
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.ApplicationsOneRequest](../../models/operations/applicationsonerequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `security`                                                                               | [operations.ApplicationsOneSecurity](../../models/operations/applicationsonesecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.ApplicationsOneRequest](../../models/operations/applicationsonerequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
 
 
 ### Response
@@ -181,7 +185,9 @@ Update Application
 import apideck
 from apideck.models import operations, shared
 
-s = apideck.Apideck()
+s = apideck.Apideck(
+    api_key="Bearer <your-apideck-api-key>",
+)
 
 req = operations.ApplicationsUpdateRequest(
     application_input=shared.ApplicationInput(
@@ -198,7 +204,7 @@ req = operations.ApplicationsUpdateRequest(
     x_apideck_consumer_id='Tempe Ruble ADP',
 )
 
-res = s.ats.applications.update(req, "Bearer <your-apideck-api-key>")
+res = s.ats.applications.update(req)
 
 if res.update_application_response is not None:
     # handle response
@@ -207,10 +213,9 @@ if res.update_application_response is not None:
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.ApplicationsUpdateRequest](../../models/operations/applicationsupdaterequest.md)   | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `security`                                                                                     | [operations.ApplicationsUpdateSecurity](../../models/operations/applicationsupdatesecurity.md) | :heavy_check_mark:                                                                             | The security requirements to use for the request.                                              |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.ApplicationsUpdateRequest](../../models/operations/applicationsupdaterequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
 
 
 ### Response

@@ -10,14 +10,6 @@ from typing import Any, Optional
 
 
 @dataclasses.dataclass
-class JobsAllSecurity:
-    api_key: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'Authorization' }})
-    
-
-
-
-
-@dataclasses.dataclass
 class JobsAllRequest:
     x_apideck_app_id: str = dataclasses.field(metadata={'header': { 'field_name': 'x-apideck-app-id', 'style': 'simple', 'explode': False }})
     r"""The ID of your Unify application"""

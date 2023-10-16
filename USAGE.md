@@ -6,7 +6,9 @@ import apideck
 import dateutil.parser
 from apideck.models import operations, shared
 
-s = apideck.Apideck()
+s = apideck.Apideck(
+    api_key="Bearer <your-apideck-api-key>",
+)
 
 req = operations.ApplicantsAddRequest(
     applicant_input=shared.ApplicantInput(
@@ -120,7 +122,7 @@ req = operations.ApplicantsAddRequest(
     x_apideck_consumer_id='Home indigo',
 )
 
-res = s.ats.applicants.add(req, "Bearer <your-apideck-api-key>")
+res = s.ats.applicants.add(req)
 
 if res.create_applicant_response is not None:
     # handle response

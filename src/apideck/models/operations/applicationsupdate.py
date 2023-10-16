@@ -11,14 +11,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class ApplicationsUpdateSecurity:
-    api_key: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'Authorization' }})
-    
-
-
-
-
-@dataclasses.dataclass
 class ApplicationsUpdateRequest:
     application_input: shared_application.ApplicationInput = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})

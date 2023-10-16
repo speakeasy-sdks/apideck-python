@@ -10,14 +10,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class ApplicantsDeleteSecurity:
-    api_key: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'Authorization' }})
-    
-
-
-
-
-@dataclasses.dataclass
 class ApplicantsDeleteRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""ID of the record you are acting upon."""

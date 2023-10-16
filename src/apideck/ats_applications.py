@@ -12,7 +12,7 @@ class AtsApplications:
         self.sdk_configuration = sdk_config
         
     
-    def add(self, request: operations.ApplicationsAddRequest, security: operations.ApplicationsAddSecurity) -> operations.ApplicationsAddResponse:
+    def add(self, request: operations.ApplicationsAddRequest) -> operations.ApplicationsAddResponse:
         r"""Create Application
         Create Application
         """
@@ -29,7 +29,7 @@ class AtsApplications:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -89,7 +89,7 @@ class AtsApplications:
         return res
 
     
-    def all(self, request: operations.ApplicationsAllRequest, security: operations.ApplicationsAllSecurity) -> operations.ApplicationsAllResponse:
+    def all(self, request: operations.ApplicationsAllRequest) -> operations.ApplicationsAllResponse:
         r"""List Applications
         List Applications
         """
@@ -101,7 +101,7 @@ class AtsApplications:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -161,7 +161,7 @@ class AtsApplications:
         return res
 
     
-    def delete(self, request: operations.ApplicationsDeleteRequest, security: operations.ApplicationsDeleteSecurity) -> operations.ApplicationsDeleteResponse:
+    def delete(self, request: operations.ApplicationsDeleteRequest) -> operations.ApplicationsDeleteResponse:
         r"""Delete Application
         Delete Application
         """
@@ -173,7 +173,7 @@ class AtsApplications:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('DELETE', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -233,7 +233,7 @@ class AtsApplications:
         return res
 
     
-    def one(self, request: operations.ApplicationsOneRequest, security: operations.ApplicationsOneSecurity) -> operations.ApplicationsOneResponse:
+    def one(self, request: operations.ApplicationsOneRequest) -> operations.ApplicationsOneResponse:
         r"""Get Application
         Get Application
         """
@@ -245,7 +245,7 @@ class AtsApplications:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -305,7 +305,7 @@ class AtsApplications:
         return res
 
     
-    def update(self, request: operations.ApplicationsUpdateRequest, security: operations.ApplicationsUpdateSecurity) -> operations.ApplicationsUpdateResponse:
+    def update(self, request: operations.ApplicationsUpdateRequest) -> operations.ApplicationsUpdateResponse:
         r"""Update Application
         Update Application
         """
@@ -322,7 +322,7 @@ class AtsApplications:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PATCH', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
