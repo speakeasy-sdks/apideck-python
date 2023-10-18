@@ -133,8 +133,8 @@ req = operations.ApplicantsAddRequest(
             ),
         ],
     ),
-    x_apideck_app_id='North',
-    x_apideck_consumer_id='Home indigo',
+    x_apideck_app_id='Small',
+    x_apideck_consumer_id='West',
 )
 
 res = s.ats.applicants.add(req)

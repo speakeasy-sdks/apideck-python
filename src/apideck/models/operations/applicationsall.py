@@ -4,9 +4,9 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import getapplicationsresponse as shared_getapplicationsresponse
+from ..shared import passthroughquery as shared_passthroughquery
 from ..shared import unexpectederrorresponse as shared_unexpectederrorresponse
-from typing import Any, Optional
-
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -19,14 +19,13 @@ class ApplicationsAllRequest:
     r"""Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response."""
     limit: Optional[int] = dataclasses.field(default=20, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
     r"""Number of results to return. Minimum 1, Maximum 200, Default 20"""
-    pass_through: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'pass_through', 'style': 'deepObject', 'explode': True }})
+    pass_through: Optional[shared_passthroughquery.PassThroughQuery] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'pass_through', 'style': 'deepObject', 'explode': True }})
     r"""Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads"""
     raw: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'raw', 'style': 'form', 'explode': True }})
     r"""Include raw response. Mostly used for debugging purposes"""
     x_apideck_service_id: Optional[str] = dataclasses.field(default=None, metadata={'header': { 'field_name': 'x-apideck-service-id', 'style': 'simple', 'explode': False }})
     r"""Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API."""
     
-
 
 
 
