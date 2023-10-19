@@ -9,7 +9,6 @@ from ..shared import unexpectederrorresponse as shared_unexpectederrorresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class ApplicantsAddRequest:
     applicant_input: shared_applicant.ApplicantInput = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
@@ -22,7 +21,6 @@ class ApplicantsAddRequest:
     x_apideck_service_id: Optional[str] = dataclasses.field(default=None, metadata={'header': { 'field_name': 'x-apideck-service-id', 'style': 'simple', 'explode': False }})
     r"""Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API."""
     
-
 
 
 

@@ -8,7 +8,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class MetaCursors:
     r"""Cursors to navigate to previous or next pages through the API"""
@@ -23,7 +22,6 @@ class MetaCursors:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class Meta:
     r"""Response metadata"""

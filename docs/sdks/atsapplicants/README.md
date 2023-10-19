@@ -132,8 +132,8 @@ req = operations.ApplicantsAddRequest(
             ),
         ],
     ),
-    x_apideck_app_id='North',
-    x_apideck_consumer_id='Home indigo',
+    x_apideck_app_id='Small',
+    x_apideck_consumer_id='West',
 )
 
 res = s.ats.applicants.add(req)
@@ -173,11 +173,13 @@ req = operations.ApplicantsAllRequest(
     filter=shared.ApplicantsFilter(
         job_id='1234',
     ),
-    pass_through={
-        "search": 'deposit',
-    },
-    x_apideck_app_id='Tungsten henry',
-    x_apideck_consumer_id='Gasoline error',
+    pass_through=shared.PassThroughQuery(
+        additional_properties={
+            "search": 'deposit',
+        },
+    ),
+    x_apideck_app_id='Mobility',
+    x_apideck_consumer_id='Mobility',
 )
 
 res = s.ats.applicants.all(req)
@@ -215,8 +217,8 @@ s = apideck.Apideck(
 
 req = operations.ApplicantsDeleteRequest(
     id='<ID>',
-    x_apideck_app_id='Architect Cotton port',
-    x_apideck_consumer_id='qua',
+    x_apideck_app_id='roughly',
+    x_apideck_consumer_id='EXE',
 )
 
 res = s.ats.applicants.delete(req)
@@ -254,8 +256,8 @@ s = apideck.Apideck(
 
 req = operations.ApplicantsOneRequest(
     id='<ID>',
-    x_apideck_app_id='Northeast seize',
-    x_apideck_consumer_id='bypass meter',
+    x_apideck_app_id='primary',
+    x_apideck_consumer_id='Fall',
 )
 
 res = s.ats.applicants.one(req)
@@ -401,8 +403,8 @@ req = operations.ApplicantsUpdateRequest(
         ],
     ),
     id='<ID>',
-    x_apideck_app_id='Gender',
-    x_apideck_consumer_id='Tempe Ruble ADP',
+    x_apideck_app_id='South',
+    x_apideck_consumer_id='complexity',
 )
 
 res = s.ats.applicants.update(req)
