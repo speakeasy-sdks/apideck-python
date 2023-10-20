@@ -17,7 +17,6 @@ class NotFoundResponseDetail2(Exception):
         return utils.marshal_json(self)
 
 
-
 @dataclasses.dataclass
 class NotFoundResponseDetail:
     pass

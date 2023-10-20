@@ -7,12 +7,10 @@ from dataclasses_json import Undefined, dataclass_json
 from typing import Optional, Union
 
 
-
 @dataclasses.dataclass
 class UnexpectedErrorResponseDetail2:
     r"""Contains parameter or domain specific information related to the error and why it occurred."""
     
-
 
 
 
@@ -22,7 +20,6 @@ class UnexpectedErrorResponseDetail:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UnexpectedErrorResponse:
     detail: Optional[Union[str, UnexpectedErrorResponseDetail2]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('detail'), 'exclude': lambda f: f is None }})

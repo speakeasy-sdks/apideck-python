@@ -4,14 +4,12 @@ from __future__ import annotations
 import dataclasses
 from apideck import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional, Union
-
+from typing import List, Optional, Union
 
 
 @dataclasses.dataclass
 class CustomFieldValue4:
     pass
-
 
 
 @dataclasses.dataclass
@@ -20,7 +18,6 @@ class CustomFieldValue:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CustomField:
     id: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
@@ -29,6 +26,6 @@ class CustomField:
     r"""More information about the custom field"""
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     r"""Name of the custom field."""
-    value: Optional[Union[str, float, bool, CustomFieldValue4, list[str]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
+    value: Optional[Union[str, float, bool, CustomFieldValue4, List[str]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
     
 

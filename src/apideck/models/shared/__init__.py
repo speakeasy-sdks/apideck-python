@@ -22,6 +22,7 @@ from .job import *
 from .jobstatus import *
 from .links import *
 from .meta import *
+from .passthroughquery import *
 from .phonenumber import *
 from .security import *
 from .unexpectederrorresponse import *
@@ -29,4 +30,4 @@ from .unifiedid import *
 from .updateapplicantresponse import *
 from .updateapplicationresponse import *
 
-__all__ = ["Address","AddressType","Applicant","ApplicantInput","ApplicantSocialLinks","ApplicantWebsites","ApplicantWebsitesType","ApplicantsFilter","Application","ApplicationInput","ApplicationStage","ApplicationStatus","CreateApplicantResponse","CreateApplicationResponse","Currency","CustomField","CustomFieldValue","CustomFieldValue4","DeleteApplicantResponse","DeleteApplicationResponse","Department","Email","EmailType","GetApplicantResponse","GetApplicantsResponse","GetApplicationResponse","GetApplicationsResponse","GetJobResponse","GetJobsResponse","Job","JobBlocks","JobBranch","JobEmploymentTerms","JobLinks","JobLinksType","JobSalary","JobStatus","JobVisibility","Links","Meta","MetaCursors","PhoneNumber","PhoneNumberType","Security","UnexpectedErrorResponse","UnexpectedErrorResponseDetail","UnexpectedErrorResponseDetail2","UnifiedID","UpdateApplicantResponse","UpdateApplicationResponse"]
+__all__ = ["Address","AddressType","Applicant","ApplicantInput","ApplicantSocialLinks","ApplicantWebsites","ApplicantWebsitesType","ApplicantsFilter","Application","ApplicationInput","ApplicationStage","ApplicationStatus","CreateApplicantResponse","CreateApplicationResponse","Currency","CustomField","CustomFieldValue","CustomFieldValue4","DeleteApplicantResponse","DeleteApplicationResponse","Department","Email","EmailType","GetApplicantResponse","GetApplicantsResponse","GetApplicationResponse","GetApplicationsResponse","GetJobResponse","GetJobsResponse","Job","JobBlocks","JobBranch","JobEmploymentTerms","JobLinks","JobLinksType","JobSalary","JobStatus","JobVisibility","Links","Meta","MetaCursors","PassThroughQuery","PhoneNumber","PhoneNumberType","Security","UnexpectedErrorResponse","UnexpectedErrorResponseDetail","UnexpectedErrorResponseDetail2","UnifiedID","UpdateApplicantResponse","UpdateApplicationResponse"]

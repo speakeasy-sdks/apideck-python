@@ -8,7 +8,6 @@ from dataclasses_json import Undefined, dataclass_json
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetApplicationResponse:
     data: shared_application.Application = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('data') }})

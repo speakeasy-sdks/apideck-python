@@ -44,7 +44,7 @@ class AtsApplications:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.BadRequestResponse6)
+                out = utils.unmarshal_json(http_res.text, errors.BadRequestResponse)
                 out.raw_response = http_res
                 raise out
             else:
@@ -65,7 +65,7 @@ class AtsApplications:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.NotFoundResponse6)
+                out = utils.unmarshal_json(http_res.text, errors.NotFoundResponse)
                 out.raw_response = http_res
                 raise out
             else:
@@ -116,7 +116,7 @@ class AtsApplications:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.BadRequestResponse5)
+                out = utils.unmarshal_json(http_res.text, errors.BadRequestResponse)
                 out.raw_response = http_res
                 raise out
             else:
@@ -137,7 +137,7 @@ class AtsApplications:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.NotFoundResponse5)
+                out = utils.unmarshal_json(http_res.text, errors.NotFoundResponse)
                 out.raw_response = http_res
                 raise out
             else:
@@ -188,7 +188,7 @@ class AtsApplications:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.BadRequestResponse7)
+                out = utils.unmarshal_json(http_res.text, errors.BadRequestResponse)
                 out.raw_response = http_res
                 raise out
             else:
@@ -209,7 +209,7 @@ class AtsApplications:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.NotFoundResponse7)
+                out = utils.unmarshal_json(http_res.text, errors.NotFoundResponse)
                 out.raw_response = http_res
                 raise out
             else:
@@ -260,7 +260,7 @@ class AtsApplications:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.BadRequestResponse8)
+                out = utils.unmarshal_json(http_res.text, errors.BadRequestResponse)
                 out.raw_response = http_res
                 raise out
             else:
@@ -281,7 +281,7 @@ class AtsApplications:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.NotFoundResponse8)
+                out = utils.unmarshal_json(http_res.text, errors.NotFoundResponse)
                 out.raw_response = http_res
                 raise out
             else:
@@ -337,7 +337,7 @@ class AtsApplications:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.BadRequestResponse9)
+                out = utils.unmarshal_json(http_res.text, errors.BadRequestResponse)
                 out.raw_response = http_res
                 raise out
             else:
@@ -358,7 +358,7 @@ class AtsApplications:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.NotFoundResponse9)
+                out = utils.unmarshal_json(http_res.text, errors.NotFoundResponse)
                 out.raw_response = http_res
                 raise out
             else:

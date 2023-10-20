@@ -30,6 +30,6 @@ customFieldValue: shared.CustomFieldValue4 = /* values here */
 ### 
 
 ```python
-customFieldValue: list[str] = /* values here */
+customFieldValue: List[str] = /* values here */
 ```
 

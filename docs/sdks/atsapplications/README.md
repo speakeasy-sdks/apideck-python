@@ -33,8 +33,8 @@ req = operations.ApplicationsAddRequest(
         ),
         status=shared.ApplicationStatus.OPEN,
     ),
-    x_apideck_app_id='Small West',
-    x_apideck_consumer_id='Officer impactful',
+    x_apideck_app_id='program',
+    x_apideck_consumer_id='North',
 )
 
 res = s.ats.applications.add(req)
@@ -71,11 +71,13 @@ s = apideck.Apideck(
 )
 
 req = operations.ApplicationsAllRequest(
-    pass_through={
-        "search": 'deposit',
-    },
-    x_apideck_app_id='Tungsten henry',
-    x_apideck_consumer_id='Gasoline error',
+    pass_through=shared.PassThroughQuery(
+        additional_properties={
+            "search": 'deposit',
+        },
+    ),
+    x_apideck_app_id='Mobility',
+    x_apideck_consumer_id='Mobility',
 )
 
 res = s.ats.applications.all(req)
@@ -113,8 +115,8 @@ s = apideck.Apideck(
 
 req = operations.ApplicationsDeleteRequest(
     id='<ID>',
-    x_apideck_app_id='Architect Cotton port',
-    x_apideck_consumer_id='qua',
+    x_apideck_app_id='roughly',
+    x_apideck_consumer_id='EXE',
 )
 
 res = s.ats.applications.delete(req)
@@ -152,8 +154,8 @@ s = apideck.Apideck(
 
 req = operations.ApplicationsOneRequest(
     id='<ID>',
-    x_apideck_app_id='Northeast seize',
-    x_apideck_consumer_id='bypass meter',
+    x_apideck_app_id='primary',
+    x_apideck_consumer_id='Fall',
 )
 
 res = s.ats.applications.one(req)
@@ -200,8 +202,8 @@ req = operations.ApplicationsUpdateRequest(
         status=shared.ApplicationStatus.OPEN,
     ),
     id='<ID>',
-    x_apideck_app_id='South complexity',
-    x_apideck_consumer_id='Tempe Ruble ADP',
+    x_apideck_app_id='up',
+    x_apideck_consumer_id='complexity',
 )
 
 res = s.ats.applications.update(req)
