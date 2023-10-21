@@ -39,7 +39,7 @@ class AtsJobs:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.BadRequestResponse10)
+                out = utils.unmarshal_json(http_res.text, errors.BadRequestResponse)
                 out.raw_response = http_res
                 raise out
             else:
@@ -60,7 +60,7 @@ class AtsJobs:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.NotFoundResponse10)
+                out = utils.unmarshal_json(http_res.text, errors.NotFoundResponse)
                 out.raw_response = http_res
                 raise out
             else:
@@ -111,7 +111,7 @@ class AtsJobs:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 400:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.BadRequestResponse11)
+                out = utils.unmarshal_json(http_res.text, errors.BadRequestResponse)
                 out.raw_response = http_res
                 raise out
             else:
@@ -132,7 +132,7 @@ class AtsJobs:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 404:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, errors.NotFoundResponse11)
+                out = utils.unmarshal_json(http_res.text, errors.NotFoundResponse)
                 out.raw_response = http_res
                 raise out
             else:

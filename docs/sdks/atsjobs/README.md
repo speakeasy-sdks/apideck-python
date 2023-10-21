@@ -22,10 +22,10 @@ s = apideck.Apideck(
 
 req = operations.JobsAllRequest(
     pass_through={
-        "search": 'deposit',
+        "search": 'string',
     },
-    x_apideck_app_id='Tungsten henry',
-    x_apideck_consumer_id='Gasoline error',
+    x_apideck_app_id='string',
+    x_apideck_consumer_id='string',
 )
 
 res = s.ats.jobs.all(req)
@@ -63,8 +63,8 @@ s = apideck.Apideck(
 
 req = operations.JobsOneRequest(
     id='<ID>',
-    x_apideck_app_id='Northeast seize',
-    x_apideck_consumer_id='bypass meter',
+    x_apideck_app_id='string',
+    x_apideck_consumer_id='string',
 )
 
 res = s.ats.jobs.one(req)

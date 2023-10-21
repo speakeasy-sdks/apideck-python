@@ -7,14 +7,10 @@ from dataclasses_json import Undefined, dataclass_json
 from typing import Optional, Union
 
 
-
 @dataclasses.dataclass
-class BadRequestResponseDetail2(Exception):
+class BadRequestResponseDetail2:
     r"""Contains parameter or domain specific information related to the error and why it occurred."""
     
-
-    def __str__(self) -> str:
-        return utils.marshal_json(self)
 
 
 

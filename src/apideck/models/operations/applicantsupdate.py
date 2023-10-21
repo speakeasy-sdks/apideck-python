@@ -9,7 +9,6 @@ from ..shared import updateapplicantresponse as shared_updateapplicantresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class ApplicantsUpdateRequest:
     applicant_input: shared_applicant.ApplicantInput = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
@@ -24,7 +23,6 @@ class ApplicantsUpdateRequest:
     x_apideck_service_id: Optional[str] = dataclasses.field(default=None, metadata={'header': { 'field_name': 'x-apideck-service-id', 'style': 'simple', 'explode': False }})
     r"""Provide the service id you want to call (e.g., pipedrive). Only needed when a consumer has activated multiple integrations for a Unified API."""
     
-
 
 
 
