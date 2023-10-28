@@ -176,6 +176,463 @@ if res.create_applicant_response is not None:
 
 <!-- End Dev Containers -->
 
+
+
+<!-- Start Error Handling -->
+# Error Handling
+
+Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+
+## Example
+
+```python
+import apideck
+import dateutil.parser
+from apideck.models import operations, shared
+
+s = apideck.Apideck(
+    api_key="Bearer <your-apideck-api-key>",
+)
+
+req = operations.ApplicantsAddRequest(
+    applicant_input=shared.ApplicantInput(
+        addresses=[
+            shared.Address(
+                city='San Francisco',
+                contact_name='Elon Musk',
+                country='US',
+                county='Santa Clara',
+                email='elon@musk.com',
+                fax='122-111-1111',
+                id='123',
+                latitude='40.759211',
+                line1='Main street',
+                line2='apt #',
+                line3='Suite #',
+                line4='delivery instructions',
+                longitude='-73.984638',
+                name='HQ US',
+                notes='Address notes or delivery instructions.',
+                phone_number='111-111-1111',
+                postal_code='94104',
+                row_version='1-12345',
+                salutation='Mr',
+                state='CA',
+                street_number='25',
+                string='25 Spring Street, Blackburn, VIC 3130',
+                type=shared.AddressType.PRIMARY,
+                website='https://elonmusk.com',
+            ),
+        ],
+        anonymized=True,
+        application_ids=[
+            'a0d636c6-43b3-4bde-8c70-85b707d992f4',
+            'a98lfd96-43b3-4bde-8c70-85b707d992e6',
+        ],
+        applications=[
+            'a0d636c6-43b3-4bde-8c70-85b707d992f4',
+            'a98lfd96-43b3-4bde-8c70-85b707d992e6',
+        ],
+        archived=False,
+        birthday=dateutil.parser.parse('2000-08-12').date(),
+        confidential=False,
+        coordinator_id='12345',
+        cover_letter='I submit this application to express my sincere interest in the API developer position. In the previous role, I was responsible for leadership and ...',
+        custom_fields=[
+            shared.CustomField(
+                description='Employee Level',
+                id='2389328923893298',
+                name='employee_level',
+            True,
+            ),
+        ],
+        deleted=True,
+        emails=[
+            shared.Email(
+                email='elon@musk.com',
+                id='123',
+                type=shared.EmailType.PRIMARY,
+            ),
+        ],
+        first_name='Elon',
+        followers=[
+            'a0d636c6-43b3-4bde-8c70-85b707d992f4',
+            'a98lfd96-43b3-4bde-8c70-85b707d992e6',
+        ],
+        headline='PepsiCo, Inc, Central Perk',
+        initials='EM',
+        last_name='Musk',
+        middle_name='D.',
+        name='Elon Musk',
+        owner_id='54321',
+        phone_numbers=[
+            shared.PhoneNumber(
+                area_code='323',
+                country_code='1',
+                extension='105',
+                id='12345',
+                number='111-111-1111',
+                type=shared.PhoneNumberType.PRIMARY,
+            ),
+        ],
+        photo_url='https://unavatar.io/elon-musk',
+        position_id='123',
+        record_url='https://app.intercom.io/contacts/12345',
+        recruiter_id='12345',
+        social_links=[
+            shared.ApplicantSocialLinks(
+                id='12345',
+                type='twitter',
+                url='https://www.twitter.com/apideck',
+            ),
+        ],
+        sources=[
+            'Job site',
+        ],
+        stage_id='12345',
+        tags=[
+            'New',
+        ],
+        title='CEO',
+        websites=[
+            shared.ApplicantWebsites(
+                id='12345',
+                type=shared.ApplicantWebsitesType.PRIMARY,
+                url='http://example.com',
+            ),
+        ],
+    ),
+    x_apideck_app_id='string',
+    x_apideck_consumer_id='string',
+)
+
+res = None
+try:
+    res = s.ats.applicants.add(req)
+
+except (BadRequestResponse) as e:
+    print(e) # handle exception
+except (UnauthorizedResponse) as e:
+    print(e) # handle exception
+except (PaymentRequiredResponse) as e:
+    print(e) # handle exception
+except (NotFoundResponse) as e:
+    print(e) # handle exception
+except (UnprocessableResponse) as e:
+    print(e) # handle exception
+
+
+
+if res.create_applicant_response is not None:
+    # handle response
+    pass
+```
+<!-- End Error Handling -->
+
+
+
+<!-- Start Server Selection -->
+# Server Selection
+
+## Select Server by Index
+
+You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+
+| # | Server | Variables |
+| - | ------ | --------- |
+| 0 | `https://unify.apideck.com` | None |
+
+For example:
+
+
+```python
+import apideck
+import dateutil.parser
+from apideck.models import operations, shared
+
+s = apideck.Apideck(
+    api_key="Bearer <your-apideck-api-key>",
+    server_idx=0
+)
+
+req = operations.ApplicantsAddRequest(
+    applicant_input=shared.ApplicantInput(
+        addresses=[
+            shared.Address(
+                city='San Francisco',
+                contact_name='Elon Musk',
+                country='US',
+                county='Santa Clara',
+                email='elon@musk.com',
+                fax='122-111-1111',
+                id='123',
+                latitude='40.759211',
+                line1='Main street',
+                line2='apt #',
+                line3='Suite #',
+                line4='delivery instructions',
+                longitude='-73.984638',
+                name='HQ US',
+                notes='Address notes or delivery instructions.',
+                phone_number='111-111-1111',
+                postal_code='94104',
+                row_version='1-12345',
+                salutation='Mr',
+                state='CA',
+                street_number='25',
+                string='25 Spring Street, Blackburn, VIC 3130',
+                type=shared.AddressType.PRIMARY,
+                website='https://elonmusk.com',
+            ),
+        ],
+        anonymized=True,
+        application_ids=[
+            'a0d636c6-43b3-4bde-8c70-85b707d992f4',
+            'a98lfd96-43b3-4bde-8c70-85b707d992e6',
+        ],
+        applications=[
+            'a0d636c6-43b3-4bde-8c70-85b707d992f4',
+            'a98lfd96-43b3-4bde-8c70-85b707d992e6',
+        ],
+        archived=False,
+        birthday=dateutil.parser.parse('2000-08-12').date(),
+        confidential=False,
+        coordinator_id='12345',
+        cover_letter='I submit this application to express my sincere interest in the API developer position. In the previous role, I was responsible for leadership and ...',
+        custom_fields=[
+            shared.CustomField(
+                description='Employee Level',
+                id='2389328923893298',
+                name='employee_level',
+            True,
+            ),
+        ],
+        deleted=True,
+        emails=[
+            shared.Email(
+                email='elon@musk.com',
+                id='123',
+                type=shared.EmailType.PRIMARY,
+            ),
+        ],
+        first_name='Elon',
+        followers=[
+            'a0d636c6-43b3-4bde-8c70-85b707d992f4',
+            'a98lfd96-43b3-4bde-8c70-85b707d992e6',
+        ],
+        headline='PepsiCo, Inc, Central Perk',
+        initials='EM',
+        last_name='Musk',
+        middle_name='D.',
+        name='Elon Musk',
+        owner_id='54321',
+        phone_numbers=[
+            shared.PhoneNumber(
+                area_code='323',
+                country_code='1',
+                extension='105',
+                id='12345',
+                number='111-111-1111',
+                type=shared.PhoneNumberType.PRIMARY,
+            ),
+        ],
+        photo_url='https://unavatar.io/elon-musk',
+        position_id='123',
+        record_url='https://app.intercom.io/contacts/12345',
+        recruiter_id='12345',
+        social_links=[
+            shared.ApplicantSocialLinks(
+                id='12345',
+                type='twitter',
+                url='https://www.twitter.com/apideck',
+            ),
+        ],
+        sources=[
+            'Job site',
+        ],
+        stage_id='12345',
+        tags=[
+            'New',
+        ],
+        title='CEO',
+        websites=[
+            shared.ApplicantWebsites(
+                id='12345',
+                type=shared.ApplicantWebsitesType.PRIMARY,
+                url='http://example.com',
+            ),
+        ],
+    ),
+    x_apideck_app_id='string',
+    x_apideck_consumer_id='string',
+)
+
+res = s.ats.applicants.add(req)
+
+if res.create_applicant_response is not None:
+    # handle response
+    pass
+```
+
+
+## Override Server URL Per-Client
+
+The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
+
+
+```python
+import apideck
+import dateutil.parser
+from apideck.models import operations, shared
+
+s = apideck.Apideck(
+    api_key="Bearer <your-apideck-api-key>",
+    server_url="https://unify.apideck.com"
+)
+
+req = operations.ApplicantsAddRequest(
+    applicant_input=shared.ApplicantInput(
+        addresses=[
+            shared.Address(
+                city='San Francisco',
+                contact_name='Elon Musk',
+                country='US',
+                county='Santa Clara',
+                email='elon@musk.com',
+                fax='122-111-1111',
+                id='123',
+                latitude='40.759211',
+                line1='Main street',
+                line2='apt #',
+                line3='Suite #',
+                line4='delivery instructions',
+                longitude='-73.984638',
+                name='HQ US',
+                notes='Address notes or delivery instructions.',
+                phone_number='111-111-1111',
+                postal_code='94104',
+                row_version='1-12345',
+                salutation='Mr',
+                state='CA',
+                street_number='25',
+                string='25 Spring Street, Blackburn, VIC 3130',
+                type=shared.AddressType.PRIMARY,
+                website='https://elonmusk.com',
+            ),
+        ],
+        anonymized=True,
+        application_ids=[
+            'a0d636c6-43b3-4bde-8c70-85b707d992f4',
+            'a98lfd96-43b3-4bde-8c70-85b707d992e6',
+        ],
+        applications=[
+            'a0d636c6-43b3-4bde-8c70-85b707d992f4',
+            'a98lfd96-43b3-4bde-8c70-85b707d992e6',
+        ],
+        archived=False,
+        birthday=dateutil.parser.parse('2000-08-12').date(),
+        confidential=False,
+        coordinator_id='12345',
+        cover_letter='I submit this application to express my sincere interest in the API developer position. In the previous role, I was responsible for leadership and ...',
+        custom_fields=[
+            shared.CustomField(
+                description='Employee Level',
+                id='2389328923893298',
+                name='employee_level',
+            True,
+            ),
+        ],
+        deleted=True,
+        emails=[
+            shared.Email(
+                email='elon@musk.com',
+                id='123',
+                type=shared.EmailType.PRIMARY,
+            ),
+        ],
+        first_name='Elon',
+        followers=[
+            'a0d636c6-43b3-4bde-8c70-85b707d992f4',
+            'a98lfd96-43b3-4bde-8c70-85b707d992e6',
+        ],
+        headline='PepsiCo, Inc, Central Perk',
+        initials='EM',
+        last_name='Musk',
+        middle_name='D.',
+        name='Elon Musk',
+        owner_id='54321',
+        phone_numbers=[
+            shared.PhoneNumber(
+                area_code='323',
+                country_code='1',
+                extension='105',
+                id='12345',
+                number='111-111-1111',
+                type=shared.PhoneNumberType.PRIMARY,
+            ),
+        ],
+        photo_url='https://unavatar.io/elon-musk',
+        position_id='123',
+        record_url='https://app.intercom.io/contacts/12345',
+        recruiter_id='12345',
+        social_links=[
+            shared.ApplicantSocialLinks(
+                id='12345',
+                type='twitter',
+                url='https://www.twitter.com/apideck',
+            ),
+        ],
+        sources=[
+            'Job site',
+        ],
+        stage_id='12345',
+        tags=[
+            'New',
+        ],
+        title='CEO',
+        websites=[
+            shared.ApplicantWebsites(
+                id='12345',
+                type=shared.ApplicantWebsitesType.PRIMARY,
+                url='http://example.com',
+            ),
+        ],
+    ),
+    x_apideck_app_id='string',
+    x_apideck_consumer_id='string',
+)
+
+res = s.ats.applicants.add(req)
+
+if res.create_applicant_response is not None:
+    # handle response
+    pass
+```
+<!-- End Server Selection -->
+
+
+
+<!-- Start Custom HTTP Client -->
+# Custom HTTP Client
+
+The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
+
+
+For example, you could specify a header for every request that your sdk makes as follows:
+
+```python
+import apideck
+import requests
+
+http_client = requests.Session()
+http_client.headers.update({'x-custom-header': 'someValue'})
+s = apideck.Apideck(client: http_client)
+```
+
+
+<!-- End Custom HTTP Client -->
+
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 
 # Development
